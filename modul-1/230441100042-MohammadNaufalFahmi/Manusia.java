@@ -43,11 +43,11 @@ public class Manusia {
         orang1.berlari(4);
         
         
-        orang2.nama = "\nKei";
+        orang2.nama = "Kei";
         orang2.umur = 23;
         orang2.jenis_kelamin = "Perempuan";
         orang2.alamat = "Jakarta";
-        System.out.println("Nama orang 2 adalah :"+ orang2.nama);
+        System.out.println("\nNama orang 2 adalah :"+ orang2.nama);
         System.out.println("Umur :"+ orang2.umur);
         System.out.println("Jenis kelamin :"+orang2.jenis_kelamin);
         System.out.println("Alamat :"+orang2.alamat);
@@ -55,11 +55,11 @@ public class Manusia {
         orang2.berjalan(20);
         orang2.berlari(6);
         
-        orang3.nama = "\nRusdi";
+        orang3.nama = "Rusdi";
         orang3.umur = 30;
         orang3.jenis_kelamin = "Laki- laki";
         orang3.alamat = "Jombang";
-        System.out.println("Nama orang 3 adalah "+ orang3.nama);
+        System.out.println("\nNama orang 3 adalah "+ orang3.nama);
         System.out.println("Umur :"+orang3.umur);
         System.out.println("Jenis kelamin :"+orang3.jenis_kelamin);
         System.out.println("Alamat :"+orang3.alamat);
