@@ -1,4 +1,4 @@
-package javaapplication7;
+package modul1alpen;
 import java.util.Scanner;
 public class Tugas2 {
 
