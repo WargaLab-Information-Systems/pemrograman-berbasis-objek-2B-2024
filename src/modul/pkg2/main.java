@@ -10,22 +10,24 @@ import java.util.Scanner;
  *
  * @author AMANDA AULIA
  */
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class main {
-     public static void main(String[] args) {
-     Scanner scanner = new Scanner(System.in);
-       ArrayList<Mahasiswa> daftarMahasiswa = new ArrayList<>();
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<Mahasiswa> daftarMahasiswa = new ArrayList<>();
 
         // Input Nama Universitas
         System.out.println("Masukkan Nama Universitas:");
         String namaUniversitas = scanner.nextLine();
         Universitas.setNamaUniversitas(namaUniversitas);
-        
+
         char ulangi;
         do {
             // Input data mahasiswa
             System.out.println("------------------------");
             System.out.println("JURUSAN:");
-            
             System.out.println("41:TEKNIK INFORMATIKA");
             System.out.println("42:TEKNIK INDUSTRI");
             System.out.println("43:TEKNIK ELEKTRO");
@@ -33,16 +35,27 @@ public class main {
             System.out.println("48:TEKNIK MESIN");
             System.out.println("49:TEKNIK MEKATRONIKA");
 
-            System.out.println("Masukkan data mahasiswa:");
+            String jurusan;
+            // Meminta input kode jurusan hingga valid
+            while (true) {
+                System.out.print("Masukkan kode jurusan (41-49): ");
+                jurusan = scanner.nextLine();
+                if ("41".equals(jurusan) || "42".equals(jurusan) || "43".equals(jurusan) ||
+                    "44".equals(jurusan) || "48".equals(jurusan) || "49".equals(jurusan)) {
+                    break; // Keluar dari loop jika kode jurusan valid
+                } else {
+                    System.out.println("Kode jurusan tidak valid. Silakan masukkan kode jurusan yang benar.");
+                }
+            }
+
+            // Input data mahasiswa
             System.out.print("1. NIM: ");
             String nim = scanner.nextLine();
             System.out.print("2. NAMA: ");
             String nama = scanner.nextLine();
             System.out.print("3. ALAMAT: ");
             String alamat = scanner.nextLine();
-            System.out.print("4. JURUSAN (41-49): ");
-            String jurusan = scanner.nextLine();
-            
+
             // Membuat objek Mahasiswa
             Mahasiswa mahasiswa = new Mahasiswa(nim, nama, alamat, jurusan);
             daftarMahasiswa.add(mahasiswa);
@@ -51,10 +64,10 @@ public class main {
             ulangi = scanner.nextLine().charAt(0);
         } while (ulangi == 'Y' || ulangi == 'y');
 
-        
+        // Menampilkan daftar mahasiswa
         System.out.println("\nDaftar Mahasiswa:");
         for (Mahasiswa mahasiswa : daftarMahasiswa) {
-            System.out.println("NamaUniversitas: " +Universitas.getNamaUniversitas());
+            System.out.println("Nama Universitas: " + Universitas.getNamaUniversitas());
             System.out.println("NIM: " + mahasiswa.getNim());
             System.out.println("NAMA: " + mahasiswa.getNama());
             System.out.println("ALAMAT: " + mahasiswa.getAlamat());
@@ -62,7 +75,8 @@ public class main {
             System.out.println("--------------------------");
         }
         scanner.close();
-     }
+    }
 }
 
-        
+  
+
