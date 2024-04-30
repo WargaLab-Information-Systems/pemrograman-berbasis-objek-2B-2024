@@ -3,7 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package tugas.pkg1.praktikum;
+<<<<<<< HEAD
 import java.util.Scanner;
+=======
+>>>>>>> 778d5daf48b89516e25b4732585ab83dfd002745
 /**
  *
  * @author TOSHIBA
@@ -13,6 +16,7 @@ import java.util.Scanner;
 
 public class Tugas1Praktikum {
 
+<<<<<<< HEAD
     /**
      * @param args the command line arguments
      */
@@ -32,6 +36,21 @@ public class Tugas1Praktikum {
         ketiga.berlari();
         
         System.out.println("Umur " + pertama.nama + " adalah " + pertama.umur);
+=======
+    /**``
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        manusia pertama = new manusia("Baihaqi", 19,"Surabaya");
+        manusia kedua = new manusia("Rizal", 20, "Bangkalan");
+        
+        System.out.println( pertama.nama + " adalah Seseorang berumur " + pertama.umur + " yang berasal dari " +pertama.alamat);
+        System.out.println(kedua.nama + " adalah seseorang yang berumur " + kedua.umur + " yang berasal dari " +kedua.alamat);
+        
+        pertama.berjalan();
+        kedua.berlari();
+        
+>>>>>>> 778d5daf48b89516e25b4732585ab83dfd002745
     }
 }
 
