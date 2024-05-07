@@ -1,32 +1,14 @@
 package opbilanganabs;
 
 public class OPBilanganabscetak {
-    public static void main(String[]args) {
-        OPPenjumlahan a;
-        a = new OPPenjumlahan() {
-            protected void set_C(double c) {
-                throw new UnsupportedOperationException("Not supported yet.");
-            }
-        };
+    public static void main(String[] args) {
+        OPPenjumlahan a = new OPPenjumlahan() {};
         a.tampil();
-        OPPengurangan b = new OPPengurangan() {
-            protected void set_C(double c) {
-                throw new UnsupportedOperationException("Not supported yet."); 
-            }
-        };
+        OPPengurangan b = new OPPengurangan() {};
         b.tampil();
-        OPPerkalian c;
-        c = new OPPerkalian() {
-            protected void set_C(double c) {
-                throw new UnsupportedOperationException("Not supported yet."); 
-            }
-        };
+        OPPerkalian c = new OPPerkalian() {};
         c.tampil();
-        OPPembagian d = new OPPembagian() {
-            protected void set_C(double c) {
-                throw new UnsupportedOperationException("Not supported yet."); 
-            }
-        };
+        OPPembagian d = new OPPembagian() {};
         d.tampil();
     }
 }
@@ -44,7 +26,7 @@ abstract class OPPenjumlahan extends OPBilanganabscetak {
         this.b = b;
     }
 
-    protected void set_C() {
+    protected void set_C(double c) {
         this.c = c;
     }
 
@@ -123,7 +105,7 @@ abstract class OPPerkalian extends OPBilanganabscetak {
         this.b = b;
     }
 
-    protected void set_C() {
+    protected void set_C(double c) {
         this.c = c;
     }
 
@@ -163,7 +145,7 @@ abstract class OPPembagian extends OPBilanganabscetak {
         this.b = b;
     }
 
-    protected void set_C() {
+    protected void set_C(double c) {
         this.c = c;
     }
 
@@ -176,8 +158,13 @@ abstract class OPPembagian extends OPBilanganabscetak {
     }
 
     protected double get_C() {
-        c = get_A() / get_B();
-        return c;
+        if (get_B() == 0) {
+            System.out.println("Error: Pembagian dengan 0 tidak bisa dilakukan.");
+            return 0;
+        } else {
+            c = get_A() / get_B();
+            return c;
+        }
     }
 
     protected void tampil() {

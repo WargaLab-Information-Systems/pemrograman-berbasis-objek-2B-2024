@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class DaftarPerpustakaan {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        Perpustakaan perpustakaan = new Perpustakaan();
+        DaftarPerpustakaan perpustakaan = new DaftarPerpustakaan();
         int jumlahBuku;
 
         System.out.print("Masukkan jumlah buku: ");
