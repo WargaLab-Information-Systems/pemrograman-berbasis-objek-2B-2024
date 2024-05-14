@@ -4,36 +4,42 @@
  */
 package buku;
 
-public class Buku {
-    private String judul;
-    private final int kodeBuku;
-    private boolean ketersediaan;
-    private static int totalBukuTersedia = 0;
+public abstract class Buku implements InfoBuku {
+    protected String judul;
+    protected int kodeBuku;
+    protected boolean ketersediaan;
+    protected static int totalBukuTersedia = 0;
 
     public Buku(String judul, int kodeBuku) {
         this.judul = judul;
         this.kodeBuku = kodeBuku;
-        this.ketersediaan = true; // Secara default, buku dianggap tersedia
+        this.ketersediaan = true;
         totalBukuTersedia++;
     }
+
+    @Override
+    public abstract void tampilkanInfo();
+
+    public static int getTotalBukuTersedia() {
+        return totalBukuTersedia;
+    }
+
     public void ubahStatusKetersediaan(boolean status) {
         this.ketersediaan = status;
-        if(status) {
+        if (status) {
             totalBukuTersedia++;
         } else {
             totalBukuTersedia--;
         }
     }
-    public static int getTotalBukuTersedia() {
-        return totalBukuTersedia;
-    }
-    public void tampilkanInfo() {
-        System.out.println("Kode Buku: " + this.kodeBuku);
-        System.out.println("Judul: " + this.judul);
-        System.out.println("Tersedia: " + (this.ketersediaan ? "Ya" : "Tidak"));
-    }
+
     public void tambahEdisi(String edisi) {
         this.judul += " - Edisi " + edisi;
     }
 }
+
+
+
+
+
 

@@ -6,20 +6,23 @@ package buku;
 
 public class TokoBuku {
     public static void main(String[] args) {
-        Buku buku1 = new Buku("The Dark of The Moon", 1);
-        Buku buku2 = new Buku("King of The Monster", 2);
-        
+        BukuTeks buku1 = new BukuTeks("Godzilla 2014", 1);
+        BukuTeks buku2 = new BukuTeks("The Smurf 2", 2);
+        BukuTeks buku3 = new BukuTeks("My Little Pony", 3);
+
+        System.out.println("Buku Sebelum Perubahan :");
         buku1.tampilkanInfo();
         buku2.tampilkanInfo();
-        
+        buku3.tampilkanInfo();
+
         buku1.ubahStatusKetersediaan(false);
         buku2.tambahEdisi("Terbaru");
-        
-        System.out.println("\nInfo Buku Setelah Perubahan:");
+
+        System.out.println("\nBuku Sesudah Perubahan :");
         buku1.tampilkanInfo();
         buku2.tampilkanInfo();
+        buku3.tampilkanInfo("Informasi tambahan untuk buku 3");
 
-        System.out.println("\nTotal Buku Yang Ada: " + Buku.getTotalBukuTersedia());
+        System.out.println("\nTotal Buku Yang Ada adalah : " + Buku.getTotalBukuTersedia());
     }
 }
-

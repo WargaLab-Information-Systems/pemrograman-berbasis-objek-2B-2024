@@ -4,21 +4,22 @@
  */
 package buku;
 
-public abstract class Buku {
+public abstract class Buku implements InfoBuku {
     protected String judul;
-    protected final int kodeBuku;
+    protected int kodeBuku;
     protected boolean ketersediaan;
     protected static int totalBukuTersedia = 0;
 
     public Buku(String judul, int kodeBuku) {
         this.judul = judul;
         this.kodeBuku = kodeBuku;
-        this.ketersediaan = true; 
+        this.ketersediaan = true;
         totalBukuTersedia++;
     }
 
+    @Override
     public abstract void tampilkanInfo();
-    
+
     public static int getTotalBukuTersedia() {
         return totalBukuTersedia;
     }
@@ -36,6 +37,7 @@ public abstract class Buku {
         this.judul += " - Edisi " + edisi;
     }
 }
+
 
 
 
