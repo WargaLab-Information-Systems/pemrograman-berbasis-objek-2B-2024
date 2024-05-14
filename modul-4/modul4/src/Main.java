@@ -21,7 +21,7 @@ public class Main {
                 Boolean lanjutkan = true;
     // Membuat instance Scanner
          while (lanjutkan){
-        System.out.print("Pilih operasi (1. Penjumlahan, 2. Pengurangan, 3.Perkalian, 4. pembagian ): ");
+        System.out.print("Pilih operasi (1. Penjumlahan, 2. Pengurangan, 3.Perkalian, 4. pembagian ,5logout): ");
         int pilihan = scanner.nextInt(); // Menggunakan instance Scanner
         
                      if (pilihan == 5) {
@@ -29,10 +29,10 @@ public class Main {
                      break;
                      }
                          // Jika pilihan                break; adalah 5, keluar dari program
-        System.out.print("Masukkan nilai b: ");
+        System.out.print("Masukkan nilai a: ");
         double a = scanner.nextDouble(); // Menggunakan instance Scanner
 
-        System.out.print("Masukkan nilai c: ");
+        System.out.print("Masukkan nilai b: ");
         double b = scanner.nextDouble(); // Menggunakan instance Scanner
 
         OperasiBilangan operasi;
@@ -59,11 +59,11 @@ public class Main {
         operasi.set_B(b);
         operasi.set_C();
         operasi.tampil();
-        System.out.print("Ingin menginput selesai? (y): ");
+        System.out.print("Ingin menginput lanajut? (y): ");
             String inputLagi = scanner.next();
 
             if (inputLagi.equalsIgnoreCase("y")) {
-                lanjutkan = false;
+                lanjutkan = true;
         
 }            
 
